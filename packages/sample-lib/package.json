@@ -1,0 +1,44 @@
+{
+  "name": "@devherobr/sample-lib",
+  "version": "1.0.5",
+  "description": "Sample component to publish on NPM",
+  "author": "Luis Fernando Langa <langa.ads@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/devherobr/libraries#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devherobr/libraries.git"
+  },
+  "bugs": {
+    "url": "https://github.com/devherobr/libraries/issues"
+  },
+  "main": "./lib/index.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "keywords": [
+    "devhero",
+    "npm",
+    "module",
+    "node",
+    "javascript"
+  ],
+  "scripts": {
+    "build": "webpack",
+    "lint": "eslint src test",
+    "test": "npm run lint && npm run coverage",
+    "test:unit": "mochapack --webpack-config webpack.config.test.js --recursive --colors",
+    "test:unit-no-webpack": "mocha --require babel-core/register --require babel-polyfill --recursive",
+    "coverage": "nyc --check-coverage --reporter=html npm run test:unit",
+    "watch": "npm run test:unit -- --watch",
+    "prepublishOnly": "npm run test && npm run build"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.js"
+    ],
+    "instrument": false,
+    "sourceMap": false
+  }
+}

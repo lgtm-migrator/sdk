@@ -1,0 +1,31 @@
+{
+  "breadcrumbs.enabled": true,
+  "editor.formatOnSave": true,
+  "editor.renderControlCharacters": false,
+  "editor.renderWhitespace": "none",
+  "explorer.confirmDelete": false,
+  "files.eol": "\n",
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "git.postCommitCommand": "push",
+  "todohighlight.isEnable": true,
+  "todohighlight.include": ["**/*.vue"],
+  "todohighlight.exclude": ["/node_modules/*"],
+  "files.exclude": {
+    "**/node_modules/**": true
+  },
+  "zenMode.centerLayout": false,
+  "zenMode.fullScreen": false,
+  "editor.formatOnType": false,
+  "window.zoomLevel": 0,
+  "window.title": "${rootName}${separator}${activeEditorShort}",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "sync.autoDownload": true,
+  "sync.forceUpload": true,
+  "sync.removeExtensions": false
+}

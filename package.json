@@ -1,0 +1,46 @@
+{
+  "name": "@devherobr/libraries",
+  "version": "0.1.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/devherobr/libraries.git"
+  },
+  "scripts": {
+    "build": "lerna run --parallel build --since origin/master",
+    "lint": "lerna run --parallel lint --since origin/master",
+    "test": "lerna run --parallel test --since origin/master",
+    "watch": "lerna run --stream watch --since origin/master",
+    "publish:ci": "lerna publish --canary --yes",
+    "postinstall": "lerna bootstrap"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-import": "^0.13.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "istanbul-instrumenter-loader": "^3.0.1",
+    "lerna": "3.20.2",
+    "mocha": "^7.0.0",
+    "mochapack": "^1.1.13",
+    "nyc": "^15.0.0",
+    "prettier": "^1.19.1",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}

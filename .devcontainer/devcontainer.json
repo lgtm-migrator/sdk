@@ -1,0 +1,32 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or the definition README at
+{
+  // "name": "Serverless Stack",
+  "dockerFile": "serverless.dockerfile",
+  // "dockerComposeFile": "docker-compose.yml",
+  // "service": "serverless-node",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  // "appPort": [],
+  "postCreateCommand": "npm install && serverless dynamodb install",
+  "runArgs": [
+    "--env",
+    "AWS_ACCESS_KEY_ID",
+    "--env",
+    "AWS_SECRET_ACCESS_KEY",
+    "--env",
+    "AWS_REGION",
+    "--env",
+    "AWS_DEFAULT_REGION"
+  ],
+  "extensions": [
+    "christian-kohler.path-intellisense",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "frankschmid.serverless-vscode",
+    "humao.rest-client",
+    "threadheap.serverless-ide-vscode",
+    "tombonnike.vscode-status-bar-format-toggle",
+    "wayou.vscode-todo-highlight"
+  ]
+}

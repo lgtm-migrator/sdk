@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  # serverless with nodejs
+  serverless-node:
+    image: serverless-node
+    environment:
+      NODE_ENV: development
+      # AWS_REGION: $AWS_REGION
+      # $AWS_DEFAULT_REGION: $$AWS_DEFAULT_REGION
+      # $AWS_ACCESS_KEY_ID: $$AWS_ACCESS_KEY_ID
+      # AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+    ports:
+      - '3000:3000'
+    container_name: serverless-node-2
+
+  # Use the LocalStack image to run DynamoDb in a container
+  dynamodb-local:
+    image: localstack/localstack:latest
+    # Using port 8000 to be consistent with dynamodb local jar
+    # port 8080 is the localstack management portal
+    ports:
+      - '8000:8000'
+      - '8080:8080'
+    volumes:
+      - db-data:/devhero/dynamodb
+    container_name: dynamodb-local
+
+    # Only interested in running dynamodb and having it
+    # persist data when the container is stopped
+    environment:
+      SERVICES: dynamodb:8000
+      DATA_DIR: '/tmp/localstack/data'
+
+volumes:
+  db-data:
