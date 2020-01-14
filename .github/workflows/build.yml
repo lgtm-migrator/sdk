@@ -27,7 +27,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Install
-        run: npm install
+        run: npm install --no-progress --no-audit
 
       - name: Build
         run: npm run build

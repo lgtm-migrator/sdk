@@ -2,15 +2,15 @@
   "name": "@devherobr/libraries",
   "version": "0.1.0",
   "description": "Monorepo with all DevHero common libraries",
+  "main": "index.js",
+  "author": "Luís Fernando Langa <langa.ads@gmail.com>",
+  "repository": "ssh://git@github.com/devherobr/libraries.git",
+  "license": "MIT",
   "workspaces": [
     "packages/*"
   ],
   "publishConfig": {
     "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "ssh://git@github.com/devherobr/libraries.git"
   },
   "scripts": {
     "build": "lerna run --parallel build --since",
