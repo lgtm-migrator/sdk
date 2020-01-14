@@ -2,6 +2,6 @@
 
 Sample component with minimal setup to build test and publish on npm registry
 
-Testing the change detection 13 tries and counting
+Testing the change detection 14 tries and counting
 
 MIT © Devhero
