@@ -17,7 +17,7 @@
     "lint": "lerna run --parallel lint --since master",
     "test": "lerna run --parallel test --since master",
     "watch": "lerna run --stream watch --since master",
-    "tag": "lerna version --no-push",
+    "version": "lerna version",
     "prepare": "lerna run --parallel prepare",
     "postinstall": "lerna bootstrap"
   },
