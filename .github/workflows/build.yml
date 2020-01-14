@@ -16,16 +16,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1.0.0
 
-      - name: Git Identity
-        run: |
-          git config --global user.name '@langaads'
-          git config --global user.email 'langaads@users.noreply.github.com'
-          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/$GITHUB_REPOSITORY
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      # - name: Git Identity
+      #   run: |
+      #     git config --global user.name '@langaads'
+      #     git config --global user.email 'langaads@users.noreply.github.com'
+      #     git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/$GITHUB_REPOSITORY
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: Checkout
-        run: git checkout "${GITHUB_REF:11}"
+      # - name: Checkout
+      #   run: git checkout "${GITHUB_REF:11}"
 
       - name: Cache node_modules
         uses: actions/cache@v1
