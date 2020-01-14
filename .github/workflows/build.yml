@@ -18,6 +18,7 @@ jobs:
 
       - name: Cache node_modules
         uses: actions/cache@v1
+        id: cache_node_modules
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -27,6 +28,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Install
+        if: steps.cache_node_modules.outputs.cache-hit != 'true'
         run: npm install --no-progress --no-audit
 
       - name: Build
