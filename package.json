@@ -17,7 +17,7 @@
     "lint": "lerna run --parallel lint --since",
     "test": "lerna run --parallel test --since",
     "watch": "lerna run --stream watch --since",
-    "version": "lerna version",
+    "release": "lerna version",
     "install": "lerna bootstrap"
   },
   "devDependencies": {
