@@ -1,4 +1,4 @@
-name: Publish with Lerna
+name: Publish
 
 on:
   push:
@@ -6,33 +6,32 @@ on:
       - master
 
 jobs:
-  Publish_Workflow:
+  Publish:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    if: "!contains(github.event.head_commit.message, '[skip-ci]')"
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v1.0.0
-      - name: Git Identity
-        run: |
-          git config --global user.name '@langaads' 
-          git config --global user.email 'langaads@users.noreply.github.com'
-          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/$GITHUB_REPOSITORY
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      - name: Prepare repository
+      # - name: Git Identity
+      #   run: |
+      #     git config --global user.name '@langaads'
+      #     git config --global user.email 'langaads@users.noreply.github.com'
+      #     git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/$GITHUB_REPOSITORY
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Checkout
         run: git checkout "${GITHUB_REF:11}"
-      - name: Pulling
+      - name: Pull
         run: git pull
-      - name: Install dependencies
+      - name: Install
         run: npm install
       - name: Build
         run: npm run build
       - name: Test
         run: npm run test
       - name: Publish
+        if: success()
         run: |
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-          npx lerna publish from-package --yes
+          npx lerna publish from-git --yes
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
