@@ -13,10 +13,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v1.0.0
       - name: Git Identity
-        run: git config --global user.name '@${GH_USER}' && git config --global user.email '${GH_USER}@users.noreply.github.com' && git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/$GITHUB_REPOSITORY
+        run: git config --global user.name '@langaads' && git config --global user.email 'langaads@users.noreply.github.com' && git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/$GITHUB_REPOSITORY
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GH_USER: langaads
       - name: Prepare repository
         run: git checkout "${GITHUB_REF:11}"
       - name: Pulling
