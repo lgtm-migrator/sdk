@@ -13,10 +13,10 @@
     "url": "ssh://git@github.com/devherobr/libraries.git"
   },
   "scripts": {
-    "build": "lerna run --parallel build --since master",
-    "lint": "lerna run --parallel lint --since master",
-    "test": "lerna run --parallel test --since master",
-    "watch": "lerna run --stream watch --since master",
+    "build": "lerna run --parallel build --since",
+    "lint": "lerna run --parallel lint --since",
+    "test": "lerna run --parallel test --since",
+    "watch": "lerna run --stream watch --since",
     "version": "lerna version",
     "postinstall": "lerna bootstrap"
   },
