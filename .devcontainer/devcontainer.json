@@ -17,7 +17,9 @@
     "--env",
     "AWS_REGION",
     "--env",
-    "AWS_DEFAULT_REGION"
+    "AWS_DEFAULT_REGION",
+    "--env",
+    "GH_TOKEN"
   ],
   "extensions": [
     "christian-kohler.path-intellisense",

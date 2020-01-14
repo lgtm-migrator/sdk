@@ -17,7 +17,7 @@
       "commitHooks": false,
       "conventionalCommits": true,
       "createRelease": "github",
-      "message": "chore(release): version %s [skip ci]"
+      "message": "chore(release): version [skip ci]"
     }
   },
   "changelog": {

@@ -1,6 +1,6 @@
 {
   "name": "@devherobr/sample-lib",
-  "version": "1.0.23",
+  "version": "1.0.28",
   "description": "Sample component to publish on NPM",
   "author": "Luis Fernando Langa <langa.ads@gmail.com>",
   "license": "MIT",
@@ -31,6 +31,7 @@
     "test:unit": "mochapack --webpack-config webpack.config.test.js --recursive --colors",
     "test:unit-no-webpack": "mocha --require babel-core/register --require babel-polyfill --recursive",
     "coverage": "nyc --check-coverage --reporter=html npm run test:unit",
+    "prepare": "npm run build",
     "watch": "npm run test:unit -- --watch"
   },
   "nyc": {

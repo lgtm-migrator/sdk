@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.28](https://github.com/devherobr/libraries/compare/@devherobr/sample-lib@1.0.26...@devherobr/sample-lib@1.0.28) (2020-01-14)
+
+**Note:** Version bump only for package @devherobr/sample-lib
+
+
+
+
+
+## [1.0.27](https://github.com/devherobr/libraries/compare/@devherobr/sample-lib@1.0.26...@devherobr/sample-lib@1.0.27) (2020-01-14)
+
+**Note:** Version bump only for package @devherobr/sample-lib
+
+
+
+
+
+## [1.0.26](https://github.com/devherobr/libraries/compare/@devherobr/sample-lib@1.0.25...@devherobr/sample-lib@1.0.26) (2020-01-14)
+
+**Note:** Version bump only for package @devherobr/sample-lib
+
+
+
+
+
+## [1.0.25](https://github.com/devherobr/libraries/compare/@devherobr/sample-lib@1.0.24...@devherobr/sample-lib@1.0.25) (2020-01-14)
+
+**Note:** Version bump only for package @devherobr/sample-lib
+
+
+
+
+
+## [1.0.24](https://github.com/devherobr/libraries/compare/@devherobr/sample-lib@1.0.23...@devherobr/sample-lib@1.0.24) (2020-01-14)
+
+**Note:** Version bump only for package @devherobr/sample-lib
+
+
+
+
+
 ## [1.0.23](https://github.com/devherobr/libraries/compare/@devherobr/sample-lib@1.0.22...@devherobr/sample-lib@1.0.23) (2020-01-14)
 
 **Note:** Version bump only for package @devherobr/sample-lib
