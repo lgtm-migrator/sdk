@@ -8,13 +8,13 @@
     "publish": {
       "access": "public",
       "allowBranch": ["master"],
-      "message": "chore(release): publish"
+      "message": "chore(release): publish %s [skip ci]"
     },
     "version": {
       "allowBranch": "master",
       "conventionalCommits": true,
       "createRelease": "github",
-      "message": "chore(release): publish [skip ci]"
+      "message": "chore(release): version %s [skip ci]"
     }
   },
   "changelog": {
