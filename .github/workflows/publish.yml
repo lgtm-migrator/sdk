@@ -13,7 +13,10 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v1.0.0
       - name: Git Identity
-        run: git config --global user.name '@langaads' && git config --global user.email 'langaads@users.noreply.github.com' && git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/$GITHUB_REPOSITORY
+        run: |
+          git config --global user.name '@langaads' 
+          git config --global user.email 'langaads@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/$GITHUB_REPOSITORY
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Prepare repository
@@ -27,7 +30,9 @@ jobs:
       - name: Test
         run: npm run test
       - name: Publish with Lerna
-        run: npx lerna publish --yes --registry https://registry.npmjs.org/:_authToken=${NPM_TOKEN}
+        run: |
+          echo "registry=//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+          npx lerna publish --yes
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
