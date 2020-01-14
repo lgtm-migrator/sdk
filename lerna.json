@@ -10,14 +10,14 @@
       "conventionalCommits": true,
       "commitHooks": false,
       "access": "public",
-      "message": "chore(release): publish %s [skip ci]"
+      "message": "chore(release): publish [skip ci]"
     },
     "version": {
       "allowBranch": "master",
       "commitHooks": false,
       "conventionalCommits": true,
       "createRelease": "github",
-      "message": "chore(release): version %s [skip ci]"
+      "message": "chore(release): version [skip ci]"
     }
   },
   "changelog": {
