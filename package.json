@@ -18,7 +18,7 @@
     "test": "lerna run --parallel test --since",
     "watch": "lerna run --stream watch --since",
     "release": "lerna version",
-    "install": "lerna bootstrap"
+    "postinstall": "lerna link"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
