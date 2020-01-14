@@ -6,17 +6,15 @@
   "command": {
     "ignoreChanges": ["**/test/**", "**/*.md"],
     "publish": {
-      "commitHooks": false,
-      "conventionalCommits": true,
       "access": "public",
       "allowBranch": ["master"],
-      "message": "chore(release): publish %s"
+      "message": "chore(release): publish"
     },
     "version": {
       "allowBranch": "master",
       "conventionalCommits": true,
       "createRelease": "github",
-      "message": "chore(release): version %s [skip ci]"
+      "message": "chore(release): publish [skip ci]"
     }
   },
   "changelog": {

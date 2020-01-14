@@ -31,8 +31,7 @@
     "test:unit": "mochapack --webpack-config webpack.config.test.js --recursive --colors",
     "test:unit-no-webpack": "mocha --require babel-core/register --require babel-polyfill --recursive",
     "coverage": "nyc --check-coverage --reporter=html npm run test:unit",
-    "watch": "npm run test:unit -- --watch",
-    "prepublishOnly": "npm run test && npm run build"
+    "watch": "npm run test:unit -- --watch"
   },
   "nyc": {
     "include": [
