@@ -1,6 +1,7 @@
 {
   "name": "@devherobr/libraries",
   "version": "0.1.0",
+  "description": "Monorepo with all DevHero common libraries",
   "workspaces": [
     "packages/*"
   ],
