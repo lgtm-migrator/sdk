@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/devherobr/libraries/compare/@devherobr/sample-lib@1.1.1...@devherobr/sample-lib@1.1.2) (2020-01-14)
+
+
+### Bug Fixes
+
+* main entry ([1f16d38](https://github.com/devherobr/libraries/commit/1f16d3873d700634476515d505de4a4e9b198680))
+
+
+
+
+
 ## [1.1.1](https://github.com/devherobr/libraries/compare/@devherobr/sample-lib@1.1.0...@devherobr/sample-lib@1.1.1) (2020-01-14)
 
 **Note:** Version bump only for package @devherobr/sample-lib
