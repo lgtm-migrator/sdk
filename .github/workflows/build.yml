@@ -21,11 +21,9 @@ jobs:
         id: cache_node_modules
         with:
           path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-v1-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-v1-build-${{ env.cache-name }}-
-            ${{ runner.os }}-v1-build-
-            ${{ runner.os }}-v1-
+            ${{ runner.os }}-v1-node-${{ env.cache-name }}-
 
       - name: Install
         if: steps.cache_node_modules.outputs.cache-hit != 'true'
