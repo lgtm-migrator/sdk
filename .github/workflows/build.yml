@@ -18,14 +18,14 @@ jobs:
 
       - name: Cache node_modules
         uses: actions/cache@v1
-        id: cache_node_modules_v1
+        id: cache_node_modules
         with:
           path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+            ${{ runner.os }}-v1-build-${{ env.cache-name }}-
+            ${{ runner.os }}-v1-build-
+            ${{ runner.os }}-v1-
 
       - name: Install
         if: steps.cache_node_modules.outputs.cache-hit != 'true'
