@@ -33,7 +33,12 @@ jobs:
         run: npm run build
 
       - name: Test
-        run: npm run test
+        run: npm run test:ci
+
+      - name: Coverage
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
 
   Skip:
     runs-on: ubuntu-latest

@@ -25,9 +25,11 @@
     "build": "webpack",
     "lint": "eslint src test",
     "test": "npm run lint && npm run coverage",
-    "test:unit": "mochapack --webpack-config webpack.config.test.js --recursive --colors",
+    "test:ci": "npm run lint && npm run coverage:ci",
+    "test:unit": "mochapack --webpack-config ../../webpack.config.test.js --recursive --colors",
     "test:unit-no-webpack": "mocha --require babel-core/register --require babel-polyfill --recursive",
     "coverage": "nyc --check-coverage --reporter=html npm run test:unit",
+    "coverage:ci": "nyc --check-coverage --reporter=lcovonly npm run test:unit && codecov",
     "prepare": "npm run build",
     "watch": "npm run test:unit -- --watch"
   },
