@@ -1,50 +1,37 @@
 {
-  "name": "@devherobr/libraries",
-  "version": "0.1.0",
+  "name": "@devherobr/sdk",
+  "version": "0.0.0",
   "description": "Monorepo with all DevHero common libraries",
   "main": "index.js",
   "author": "Luís Fernando Langa <langa.ads@gmail.com>",
-  "repository": "ssh://git@github.com/devherobr/libraries.git",
+  "repository": "ssh://git@github.com/devherobr/sdk.git",
   "license": "MIT",
   "workspaces": [
-    "packages/*"
+    "examples/**"
   ],
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "build": "lerna run --parallel build --since",
-    "lint": "lerna run --parallel lint --since",
-    "test": "lerna run --parallel test --since",
-    "test:ci": "lerna run --parallel test:ci",
-    "test:full": "lerna run --parallel test",
-    "watch": "lerna run --stream watch --since",
-    "release": "lerna version",
-    "postinstall": "lerna link"
+    "lerna": "lerna",
+    "start": "lerna run start:leaf --stream",
+    "build": "lerna run build:leaf --stream",
+    "lint": "lerna run lint:leaf --stream",
+    "test": "lerna run test:leaf --stream",
+    "watch": "lerna run watch:leaf --stream",
+    "ci": "lerna run ci:leaf --stream --since"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.0.6",
-    "babel-plugin-add-module-exports": "^1.0.2",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
     "chai": "^4.2.0",
-    "codecov": "^3.6.2",
+    "codecov": "^3.6.5",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-import": "^0.13.0",
-    "eslint-config-prettier": "^6.9.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-prettier": "^3.1.2",
-    "istanbul-instrumenter-loader": "^3.0.1",
+    "eslint-plugin-prettier": "^3.1.3",
     "lerna": "3.20.2",
-    "mocha": "^7.0.0",
-    "mochapack": "^1.1.13",
+    "mocha": "^7.1.2",
     "nyc": "^15.0.1",
-    "prettier": "^2.0.4",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "prettier": "^2.0.5"
   }
 }

@@ -29,11 +29,8 @@ jobs:
         if: steps.cache_node_modules.outputs.cache-hit != 'true'
         run: npm install --no-progress --no-audit
 
-      - name: Build
-        run: npm run build
-
       - name: Test
-        run: npm run test:ci
+        run: npm run ci-test
 
       - name: Coverage
         uses: codecov/codecov-action@v1

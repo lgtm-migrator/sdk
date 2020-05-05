@@ -9,20 +9,10 @@
       "request": "launch",
       "name": "Debug Lambda",
       "program": "${workspaceRoot}/node_modules/serverless/bin/serverless",
-      "args": [
-        "offline",
-        "start",
-        "--noTimeout",
-        "--dontPrintOutput",
-        "--stage=local"
-      ],
+      "args": ["offline", "start", "--noTimeout", "--dontPrintOutput", "--stage=local"],
       "sourceMaps": true,
-      "runtimeArgs": [
-        "--lazy"
-      ],
-      "outFiles": [
-        "${workspaceFolder}/.webpack/**/*.js"
-      ],
+      "runtimeArgs": ["--lazy"],
+      "outFiles": ["${workspaceFolder}/.webpack/**/*.js"],
       "protocol": "inspector",
       "runtimeExecutable": "node",
       "env": {},
@@ -35,9 +25,7 @@
       "request": "launch",
       "name": "Jest All",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
-      "args": [
-        "--runInBand"
-      ],
+      "args": ["--runInBand"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "disableOptimisticBPs": true,
@@ -50,24 +38,13 @@
       "request": "launch",
       "name": "Jest Current File",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
-      "args": [
-        "${fileBasenameNoExtension}",
-        "--config",
-        "jest.config.js"
-      ],
+      "args": ["${fileBasenameNoExtension}", "--config", "jest.config.js"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "disableOptimisticBPs": true,
       "windows": {
         "program": "${workspaceFolder}/node_modules/jest/bin/jest"
       }
-    },
-    {
-      "name": "Docker Node.js Launch and Attach",
-      "type": "docker",
-      "request": "launch",
-      "preLaunchTask": "docker-run: debug",
-      "platform": "node"
     }
   ]
 }

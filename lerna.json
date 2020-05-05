@@ -1,7 +1,6 @@
 {
-  "packages": ["packages/*"],
+  "packages": ["examples/**"],
   "version": "independent",
-  "useWorkspaces": true,
   "npmClient": "npm",
   "command": {
     "ignoreChanges": ["**/test/**", "**/*.md"],
@@ -21,7 +20,7 @@
     }
   },
   "changelog": {
-    "repo": "devherobr/libraries",
+    "repo": "devherobr/sdk",
     "labels": {
       "enchancement": ":rocket:(Enhancement)",
       "bug": ":bug:(Bug Fix)",

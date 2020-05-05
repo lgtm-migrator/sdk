@@ -1,5 +1,5 @@
-import { assert, expect } from 'chai';
-import defaultAwesomeFunction, { awesomeFunction } from '../src';
+const { assert, expect } = require('chai');
+const { default: defaultAwesomeFunction, awesomeFunction } = require('../src');
 
 describe('Awesome test.', () => {
   it('should test default awesome function', () => {
