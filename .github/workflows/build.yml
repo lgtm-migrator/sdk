@@ -30,7 +30,7 @@ jobs:
         run: npm install --no-progress --no-audit
 
       - name: Test
-        run: npm run ci-test
+        run: npm run ci
 
       - name: Coverage
         uses: codecov/codecov-action@v1
