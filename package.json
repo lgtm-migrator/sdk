@@ -20,7 +20,7 @@
     "test": "lerna run test:leaf --stream",
     "watch": "lerna run watch:leaf --stream",
     "ci": "lerna run ci:leaf --stream --since",
-    "release": "lerna version --yes --amend",
+    "release": "lerna version --yes",
     "publish": "lerna publish from-git --yes"
   },
   "devDependencies": {
