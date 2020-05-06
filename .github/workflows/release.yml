@@ -21,6 +21,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
+      - name: Checkout and pull branch
+        run: git checkout "${GITHUB_REF:11}" && git pull
+
       - name: Cache node_modules
         uses: actions/cache@v1
         id: cache_node_modules
