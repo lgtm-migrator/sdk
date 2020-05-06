@@ -6,8 +6,8 @@
     "ignoreChanges": ["**/test/**", "**/*.md"],
     "publish": {
       "allowBranch": ["master"],
-      "conventionalCommits": true,
       "commitHooks": false,
+      "conventionalCommits": true,
       "access": "public",
       "message": "chore(release): publish [skip-ci]"
     },
@@ -16,7 +16,6 @@
       "commitHooks": false,
       "conventionalCommits": true,
       "createRelease": "github",
-      "ignoreChanges": ["**/coverage/**", "**/test/**", "**/*.md"],
       "message": "chore(release): version [skip-ci]"
     }
   },

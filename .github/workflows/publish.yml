@@ -38,7 +38,7 @@ jobs:
 
       - name: Publish package
         if: success()
-        run: npm run publish
+        run: npm run ci-publish
 
   Skip:
     runs-on: ubuntu-latest
