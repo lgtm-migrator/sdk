@@ -41,12 +41,13 @@ jobs:
         run: npm run ci
 
       - name: Create release
-        run: |
-          git status
-          npm run release
-          git status
+        run: npm run release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Check Status
+        run: git status
 
   Skip:
     runs-on: ubuntu-latest
