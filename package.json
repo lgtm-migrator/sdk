@@ -20,8 +20,8 @@
     "test": "lerna run test:leaf --stream",
     "watch": "lerna run watch:leaf --stream",
     "ci": "lerna run ci:leaf --stream --since",
-    "ci-release": "lerna version --yes",
-    "ci-publish": "lerna publish from-git --yes"
+    "release": "lerna version --yes",
+    "publish": "lerna publish from-git --yes"
   },
   "devDependencies": {
     "chai": "^4.2.0",
