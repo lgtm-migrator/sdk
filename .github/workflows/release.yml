@@ -22,7 +22,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Checkout and pull branch
-        run: git checkout "${GITHUB_REF:11}" && git pull
+        run: |
+          git checkout "${GITHUB_REF:11}" 
+          git pull
 
       - name: Cache node_modules
         uses: actions/cache@v1
@@ -39,6 +41,9 @@ jobs:
 
       - name: Test
         run: npm run ci
+
+      - name: Status
+        run: git status
 
       - name: Create release
         run: npm run release
