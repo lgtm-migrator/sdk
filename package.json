@@ -19,7 +19,9 @@
     "lint": "lerna run lint:leaf --stream",
     "test": "lerna run test:leaf --stream",
     "watch": "lerna run watch:leaf --stream",
-    "ci": "lerna run ci:leaf --stream --since"
+    "ci": "lerna run ci:leaf --stream --since",
+    "release": "lerna version --yes --amend",
+    "publish": "lerna publish from-git --yes"
   },
   "devDependencies": {
     "chai": "^4.2.0",

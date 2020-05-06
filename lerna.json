@@ -15,7 +15,9 @@
       "allowBranch": ["master"],
       "commitHooks": false,
       "conventionalCommits": true,
+      "ammend": true,
       "createRelease": "github",
+      "ignoreChanges": ["**/coverage/**", "**/test/**", "**/*.md"],
       "message": "chore(release): version [skip-ci]"
     }
   },

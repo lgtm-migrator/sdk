@@ -28,6 +28,6 @@
     "lint:leaf": "eslint src test",
     "test:leaf": "nyc mocha --recursive --colors",
     "watch:leaf": "npm run test:leaf -- --watch",
-    "ci:leaf": "npm run lint:leaf && nyc --reporter=lcovonly npm run test:leaf && codecov"
+    "ci:leaf": "nyc --reporter=lcovonly npm run test:leaf && codecov"
   }
 }
