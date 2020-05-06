@@ -1,6 +1,6 @@
 {
   "name": "@devherobr/sample-lib",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Sample component to publish on NPM",
   "author": "Luis Fernando Langa <langa.ads@gmail.com>",
   "license": "MIT",
