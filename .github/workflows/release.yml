@@ -41,7 +41,10 @@ jobs:
         run: npm run ci
 
       - name: Create release
-        run: npm run release
+        run: |
+          git status
+          npm run release
+          git status
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
