@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.1.0 (2020-05-11)
+
+
+### Features
+
+* **adapters:** created dynamodb adapter ([d362dbc](https://github.com/devherobr/sdk/commit/d362dbce041476eddee77943728f6f8d51a8d94a))
+
+
+
+
+
 ## [1.1.10](https://github.com/devherobr/libraries/compare/@devherobr/sample-lib@1.1.9...@devherobr/sample-lib@1.1.10) (2020-05-06)
 
 **Note:** Version bump only for package @devherobr/sample-lib

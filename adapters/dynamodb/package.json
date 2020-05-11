@@ -1,6 +1,6 @@
 {
   "name": "@devherobr/adapters-dynamodb",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Dynamodb data adapter",
   "author": "Luis Fernando Langa <langa.ads@gmail.com>",
   "license": "MIT",
