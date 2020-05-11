@@ -1,0 +1,36 @@
+{
+  "newtest": {
+    "description": "🚀 Create minimal test file",
+    "scope": "javascript",
+    "prefix": "newtest",
+    "body": [
+      "const { expect } = require('chai');",
+      "",
+      "describe('${1:${TM_FILENAME}}', () => {",
+      "  describe('when ${2:its raining}', () => {",
+      "    it('should ${3:seek shelter}', () => {",
+      "      expect(false).to.be.true;",
+      "    });",
+      "  });",
+      "});"
+    ]
+  },
+  "describe": {
+    "description": "🚀 Describe test case",
+    "scope": "javascript",
+    "prefix": "descbribe",
+    "body": [
+      "describe('when ${2:its raining}', () => {",
+      "  it('should ${3:seek shelter}', () => {",
+      "    expect(false).to.be.true;",
+      "  });",
+      "});"
+    ]
+  },
+  "it": {
+    "description": "🚀 Describe test expectative",
+    "scope": "javascript",
+    "prefix": "it",
+    "body": ["it('should ${3:seek shelter}', () => {", "  expect(false).to.be.true;", "});"]
+  }
+}
