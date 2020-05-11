@@ -21,7 +21,8 @@
     "watch": "lerna run watch:leaf --stream",
     "ci": "lerna run ci:leaf --stream --since",
     "release": "lerna version --yes",
-    "publish": "lerna publish from-git --yes"
+    "publish": "lerna publish from-git --yes",
+    "bootstrap": "lerna bootstrap"
   },
   "devDependencies": {
     "chai": "^4.2.0",

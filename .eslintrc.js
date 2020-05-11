@@ -1,21 +1,20 @@
-const path = require('path');
-
 module.exports = {
   env: {
     es6: true,
     node: true,
     mocha: true,
   },
-  extends: ['prettier'],
-  plugins: ['prettier', 'import'],
-  parserOptions: {
-    // required to enable spread operator
-    ecmaVersion: 9,
-  },
+  extends: ['prettier', 'eslint:recommended'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
+  parserOptions: {
+    // required to enable spread operator
+    ecmaVersion: 9,
+  },
+  plugins: ['prettier', 'import'],
+  root: true,
   rules: {
     // requires arrow parens to always be present even with 1 argument
     'arrow-parens': ['error', 'always'],
@@ -25,7 +24,10 @@ module.exports = {
     // allows use of dev-dependencies on unit tests but not on src
     'import/no-extraneous-dependencies': [
       'error',
-      { packageDir: [__dirname], devDependencies: ['**/*.test.js'] },
+      {
+        packageDir: [__dirname],
+        devDependencies: ['**/*.test.js'],
+      },
     ],
     'no-confusing-arrow': ['error', { allowParens: true }],
     // allow reassing of parameters only on objects

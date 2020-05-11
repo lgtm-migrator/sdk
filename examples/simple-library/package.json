@@ -4,10 +4,10 @@
   "description": "Sample component to publish on NPM",
   "author": "Luis Fernando Langa <langa.ads@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/devherobr/libraries#readme",
-  "repository": "git+https://github.com/devherobr/libraries.git",
+  "homepage": "https://github.com/devherobr/sdk#readme",
+  "repository": "git+https://github.com/devherobr/sdk.git",
   "bugs": {
-    "url": "https://github.com/devherobr/libraries/issues"
+    "url": "https://github.com/devherobr/sdk/issues"
   },
   "main": "./src/index.js",
   "files": [

@@ -6,8 +6,8 @@ module.exports = {
   reporter: ['html'],
   'report-dir': './coverage',
   'temp-dir': './coverage/.temp-nyc-output',
-  branches: 50,
-  lines: 50,
-  functions: 50,
-  statements: 50,
+  branches: 80,
+  lines: 80,
+  functions: 80,
+  statements: 80,
 };

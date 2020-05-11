@@ -1,6 +1,6 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json or the definition README at
 {
-  // "name": "Serverless Stack",
+  "name": "sdk",
   "dockerFile": "serverless.dockerfile",
   // "dockerComposeFile": "docker-compose.yml",
   // "service": "serverless-node",
@@ -29,6 +29,7 @@
     "humao.rest-client",
     "threadheap.serverless-ide-vscode",
     "tombonnike.vscode-status-bar-format-toggle",
+    "wakatime.vscode-wakatime",
     "wayou.vscode-todo-highlight"
   ]
 }
