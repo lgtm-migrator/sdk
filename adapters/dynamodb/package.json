@@ -20,6 +20,9 @@
     "node",
     "javascript"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "lint": "npm run lint --prefix ../../ -- --scope $npm_package_name",
     "test": "npm run test --prefix ../../ -- --scope $npm_package_name",
