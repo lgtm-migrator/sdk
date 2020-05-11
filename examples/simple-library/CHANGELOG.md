@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/devherobr/sdk/compare/@devherobr/sample-lib@1.2.0...@devherobr/sample-lib@1.2.1) (2020-05-11)
+
+
+### Bug Fixes
+
+* **cd:** define public access ([995f8a2](https://github.com/devherobr/sdk/commit/995f8a2407f2280e72945292161c499d96383841))
+
+
+
+
+
 # [1.2.0](https://github.com/devherobr/sdk/compare/@devherobr/sample-lib@1.1.10...@devherobr/sample-lib@1.2.0) (2020-05-11)
 
 
