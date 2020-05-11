@@ -8,24 +8,30 @@ module.exports = {
   },
   extends: ['prettier'],
   plugins: ['prettier', 'import'],
+  parserOptions: {
+    // required to enable spread operator
+    ecmaVersion: 9,
+  },
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
   rules: {
+    // requires arrow parens to always be present even with 1 argument
     'arrow-parens': ['error', 'always'],
+    // requires brackets on all ifs that are multiline
     curly: ['error', 'multi-line'],
     'import/no-unresolved': ['error', { caseSensitive: true }],
-    // erro caso não reconhecer algum require/import
-    // packageDir: avisa que algumas dependências podem estar na raiz do repositório
-    // devDependecies: permite que sejam importadas devDependencies em arquivos de teste unitário
-    // 'import/no-extraneous-dependencies': [
-    //   'error',
-    //   { packageDir: [__dirname], devDependencies: ['**/*.test.js'] },
-    // ],
+    // allows use of dev-dependencies on unit tests but not on src
+    'import/no-extraneous-dependencies': [
+      'error',
+      { packageDir: [__dirname], devDependencies: ['**/*.test.js'] },
+    ],
     'no-confusing-arrow': ['error', { allowParens: true }],
+    // allow reassing of parameters only on objects
     'no-param-reassign': ['error', { props: false }],
-    'no-trailing-spaces': ['error', { skipBlankLines: true, ignoreComments: true }],
+
+    'no-trailing-spaces': ['error'],
     'nonblock-statement-body-position': ['error', 'beside', { overrides: { if: 'any' } }],
     'prettier/prettier': ['error'],
     radix: ['error', 'as-needed'],
