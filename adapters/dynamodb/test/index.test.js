@@ -18,23 +18,21 @@ describe('index.js', () => {
   });
 
   after(() => {
-    // restore normal function
     AWS_MOCK.restore('DynamoDB.DocumentClient');
   });
 
   describe('when default instance is created', () => {
-    const adapter = new DynamoAdapter({ AWS, numericIdTable: 'testTable' });
-
-    it('should have the property "dynamo"', () => {
-      expect(adapter.dynamo).to.exist;
+    const adapter = new DynamoAdapter({
+      AWS,
+      numericIdTable: 'testTable',
     });
-  });
 
-  describe('when local instance is created', () => {
-    const adapter = new DynamoAdapterLocal({ AWS, numericIdTable: 'testTable' });
+    it('should be able to setup', async () => {
+      expect(await adapter.setup()).not.to.throw;
+    });
 
-    it('should have the property "dynamo"', () => {
-      expect(adapter.dynamo).to.exist;
+    it('should be able to teardown', async () => {
+      expect(await adapter.teardown()).not.to.throw;
     });
 
     it('should have a function "get"', () => {
@@ -43,6 +41,41 @@ describe('index.js', () => {
 
     it('should have a function "put"', () => {
       expect(adapter.put).to.be.instanceOf(Function);
+    });
+
+    it('should have a function "delete"', () => {
+      expect(adapter.delete).to.be.instanceOf(Function);
+    });
+  });
+
+  describe('when local instance is created', () => {
+    const adapter = new DynamoAdapterLocal({
+      AWS,
+      stringIdTable: 'testTable2',
+    });
+
+    it('should have the property "options"', () => {
+      expect(adapter.options).to.exist;
+    });
+
+    it('should be able to setup', async () => {
+      expect(await adapter.setup()).not.to.throw;
+    });
+
+    it('should be able to teardown', async () => {
+      expect(await adapter.teardown()).not.to.throw;
+    });
+
+    it('should have a function "get"', () => {
+      expect(adapter.get).to.be.instanceOf(Function);
+    });
+
+    it('should have a function "put"', () => {
+      expect(adapter.put).to.be.instanceOf(Function);
+    });
+
+    it('should have a function "delete"', () => {
+      expect(adapter.delete).to.be.instanceOf(Function);
     });
   });
 
@@ -66,10 +99,10 @@ describe('index.js', () => {
   });
 
   describe('when get is called', () => {
-    const adapter = new DynamoAdapterLocal({ AWS, numericIdTable: 'testTable' });
+    const adapter = new DynamoAdapterLocal({ AWS, stringIdTable: 'testTable' });
 
     it('should succeed', async () => {
-      const item = await adapter.get('/', 123);
+      const item = await adapter.get('/', '123');
       expect(item).to.exist;
     });
   });

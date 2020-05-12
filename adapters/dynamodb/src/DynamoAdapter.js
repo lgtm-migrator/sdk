@@ -1,37 +1,44 @@
 const IdTypeNotSuported = require('./exceptions/IdTypeNotSupported');
 
 class DynamoAdapter {
+  /**
+   * @param {AWS} options AWS instance to create document client
+   */
   constructor(options) {
-    options.dynamodb = { convertEmptyValues: true };
-    this.initialize(options);
+    this.options = options;
+    this.options.dynamodb = { convertEmptyValues: true, ...options.dynamodb };
   }
 
-  initialize(options) {
-    this.setTable('string', options.stringIdTable);
-    this.setTable('number', options.numericIdTable);
+  async setup() {
+    if (this.dynamo) return;
 
-    const dynamo = new options.AWS.DynamoDB.DocumentClient(options.dynamodb);
+    this.defineTables();
+
+    const dynamo = new this.options.AWS.DynamoDB.DocumentClient(this.options.dynamodb);
     this.dynamo = dynamo;
   }
 
-  setTable(type, tableName) {
-    if (!this.tables) this.tables = {};
-    this.tables[type] = tableName;
+  async teardown() {
+    this.dynamo = null;
+  }
+
+  defineTables() {
+    this.tables = {};
+    const { stringIdTable, numericIdTable } = this.options;
+    if (stringIdTable) this.tables.string = stringIdTable;
+    if (numericIdTable) this.tables.number = numericIdTable;
   }
 
   getTable(id) {
     const type = typeof id;
-    if (this.tables && this.tables[type]) {
-      return this.tables[type];
-    } else {
-      throw new IdTypeNotSuported(id, type);
-    }
+    if (!this.tables[type]) throw new IdTypeNotSuported(id, type);
+    return this.tables[type];
   }
 
   async get(path, id) {
-    const tableName = this.getTable(id);
+    await this.setup();
     const params = {
-      TableName: tableName,
+      TableName: this.getTable(id),
       Key: {
         path,
         id,
@@ -41,18 +48,18 @@ class DynamoAdapter {
   }
 
   async put(path, id, item) {
-    const tableName = this.getTable(id);
+    await this.setup();
     const params = {
-      TableName: tableName,
+      TableName: this.getTable(id),
       Item: { path, id, data: item },
     };
     return this.dynamo.put(params).promise();
   }
 
   async delete(path, id) {
-    const tableName = this.getTable(id);
+    await this.setup();
     const params = {
-      TableName: tableName,
+      TableName: this.getTable(id),
       Key: { path, id },
     };
     return this.dynamo.delete(params).promise();
