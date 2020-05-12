@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json or the definition README at
 {
   "name": "sdk",
-  "dockerFile": "serverless.dockerfile",
+  "dockerFile": "Dockerfile",
   // "dockerComposeFile": "docker-compose.yml",
   // "service": "serverless-node",
   "settings": {
@@ -19,7 +19,10 @@
     "--env",
     "AWS_DEFAULT_REGION",
     "--env",
-    "GH_TOKEN"
+    "GH_TOKEN",
+    "-v",
+    // use this volume on linux
+    "/devhero:/devhero:rw"
   ],
   "extensions": [
     "christian-kohler.path-intellisense",
