@@ -1,8 +1,8 @@
 {
-  "newtest": {
+  "ztest": {
     "description": "🚀 Create minimal test file",
     "scope": "javascript",
-    "prefix": "newtest",
+    "prefix": "ztest",
     "body": [
       "const { expect } = require('chai');",
       "",
@@ -15,10 +15,10 @@
       "});"
     ]
   },
-  "describe": {
+  "zdescribe": {
     "description": "🚀 Describe test case",
     "scope": "javascript",
-    "prefix": "descbribe",
+    "prefix": "zdescribe",
     "body": [
       "describe('when ${2:its raining}', () => {",
       "  it('should ${3:seek shelter}', () => {",
@@ -27,10 +27,10 @@
       "});"
     ]
   },
-  "it": {
+  "zit": {
     "description": "🚀 Describe test expectative",
     "scope": "javascript",
-    "prefix": "it",
+    "prefix": "zit",
     "body": ["it('should ${3:seek shelter}', () => {", "  expect(false).to.be.true;", "});"]
   }
 }

@@ -1,5 +1,5 @@
 {
-  "packages": ["examples/**", "adapters/**"],
+  "packages": ["examples/**", "adapters/**", "model/**"],
   "version": "independent",
   "npmClient": "npm",
   "command": {

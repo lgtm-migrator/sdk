@@ -1,0 +1,36 @@
+{
+  "name": "@devherobr/adapters-memmory",
+  "version": "1.1.1",
+  "description": "In-memmory data adapter",
+  "author": "Luis Fernando Langa <langa.ads@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/devherobr/sdk#readme",
+  "repository": "git+https://github.com/devherobr/sdk.git",
+  "bugs": {
+    "url": "https://github.com/devherobr/sdk/issues"
+  },
+  "main": "./src/index.js",
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "devhero",
+    "npm",
+    "module",
+    "node",
+    "javascript"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "npm run lint --prefix ../../ -- --scope $npm_package_name",
+    "test": "npm run test --prefix ../../ -- --scope $npm_package_name",
+    "watch": "npm run watch --prefix ../../ -- --scope $npm_package_name",
+    "ci": "npm run ci-test --prefix ../../ -- --scope $npm_package_name",
+    "lint:leaf": "eslint src test",
+    "test:leaf": "nyc mocha --recursive --colors",
+    "watch:leaf": "npm run test:leaf -- --watch",
+    "ci:leaf": "nyc --reporter=lcovonly npm run test:leaf && codecov"
+  }
+}
