@@ -9,9 +9,10 @@ module.exports = {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
+  parser: 'babel-eslint',
   parserOptions: {
-    // required to enable spread operator
-    ecmaVersion: 9,
+    ecmaVersion: 2018,
+    sourceType: 'module',
   },
   plugins: ['prettier', 'import'],
   root: true,
